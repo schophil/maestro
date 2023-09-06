@@ -1,0 +1,17 @@
+{
+    "name": "maestro",
+    "description": "A small WCM in PHP.",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Maestro\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Philippe Schottey"
+        }
+    ],
+    "require": {}
+}
