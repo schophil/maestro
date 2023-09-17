@@ -1,0 +1,26 @@
+body, html { padding: 0px; margin: 0px; font-size: 10pt; }
+
+/* the tables */
+table.mroCrudData { border-collapse: collapse; background-color: white; font-size: 10pt; }
+table.mroCrudData thead th { border: 1px solid white; background-color: #d1d1d1; padding: 5px; }
+table.mroCrudData tbody td { border: 1px solid white; padding: 5px; }
+table.mroCrudData tbody tr { background-color: #e5ecf6; }
+table.mroCrudData tbody tr.even { background-color: #cfdff6; }
+
+/* navigation */
+table.mroCrudAction { text-align: center; }
+table.mroCrudAction td { padding: 5px; }
+
+/* edit fields */
+.mroCrudEdit { padding: 0px; margin: 0px; }
+.mroCrudEdit form { padding: 0px; margin: 0px; }
+.mroCrudEdit .mroCrudMetaData { font-size: 7pt; padding: 2px; margin: 0px 0px 10px 0px; background-color: #d1d1d1; }
+.mroCrudEdit .mroCrudMetaData input { font-size: 7pt; border: 1px solid black; }
+.mroCrudEdit .mroCrudData .mroVerticalField { padding: 0px; margin: 5px 0px 5px 0px; }
+.mroCrudEdit .mroCrudCancel, .mroCrudCreate { padding: 0px; margin: 0px 0px 10px 0px; }
+.mroCrudEdit td.mroLabel { text-align: right; }
+
+/* action buttons */
+div.mroCrudAction { margin: 5px; }
+
+div#crudapp { overflow: scroll; padding: 10px; z-index: 1; border: 2px solid black; background: white; }

@@ -1,0 +1,26 @@
+html,body {padding: 0px; margin: 0px; background: url(../images/background.jpg) center repeat-y #7b0710;}
+body {font-size: 14; font-family: Verdana;}
+.master {padding: 0px; margin: 0px;}
+.steps {background: url(../images/steps.jpg) top left no-repeat;}
+.dans {background: url(../images/dans.jpg) top right no-repeat;}
+.title {font-size: 28pt; font-weight: bold; text-align: center; padding: 50px 0px 3px 0px;}
+.centered {margin-left: auto; margin-right: auto; width: 795px;}
+.content {padding: 10px; text-align: justify; line-height: 160%;}
+.footer {padding: 25px 10px 10px 10px; text-align: right; color: #7b0710; font-size: 9px;}
+.menu {text-align: center;}
+.menu hr {width: 75%; color: #75070f; background-color: #75070f; border: 0; height: 2px; }
+.menu ul {padding: 0; margin: 0; white-space: nowrap; list-style-type: none;}
+.menu ul li {display: inline;}
+.menu li a {padding:0.2em 1em; color: #75070f; text-decoration: none; font-size: 13pt;}
+.menu li a:hover {color: #cb142f; font-size: 13pt;}
+#agendaNext {margin-left: 7px; font-size: 13px; width: 200px; float: right; padding: 5px; text-align: center;}
+.message {border: 1px solid #7b0710; background: url(../images/message.png); color: #7b0710;}
+.agendaItem {padding: 3px; margin-bottom: 5px;}
+.agendaItem p {padding: 0px; margin: 0px;}
+.agendaItem .agendaTitle {font-weight: bold;}
+.mroAlbumAdv {text-align: center;}
+.mroAlbumAdv a {padding-left: 3px; padding-right: 3px;}
+#mroAlbumNavAll {padding: 3px; text-align: left; margin: auto; height: 300px; overflow: auto; display: none; background: black; border: 3px solid gray;}
+#mroAlbumNavAll img {width: 100px; height: 100px; border: 2px solid white;}
+#mroAlbumNavAll a {padding: 5px;}
+

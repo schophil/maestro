@@ -1,11 +1,11 @@
 {
-    "name": "maestro",
+    "name": "schophil/maestro",
     "description": "A small WCM in PHP.",
     "type": "project",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Maestro\\": "src/"
+            "Maestro\\": "src/classes"
         }
     },
     "authors": [
@@ -13,5 +13,9 @@
             "name": "Philippe Schottey"
         }
     ],
-    "require": {}
+    "require": {
+        "ext-mysqli": "*",
+        "monolog/monolog": "^3.4",
+        "vlucas/phpdotenv": "^5.5"
+    }
 }
