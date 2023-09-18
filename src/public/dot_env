@@ -1,0 +1,6 @@
+db_user=<database user>
+db_pwd=<database user password>
+db_name=<database name>
+db_host=<database host>
+root_pwd=<password for maestro root user>
+maestro_site=<site to use>
