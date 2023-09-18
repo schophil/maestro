@@ -26,7 +26,7 @@ function is_valid_email($email)
 
 function maestro_info(): string
 {
-    return 'maestro v2010.2';
+    return 'maestro v2023.1';
 }
 
 function is_empty($value)
