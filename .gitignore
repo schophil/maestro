@@ -3,8 +3,8 @@ composer.phar
 /src/public/.env
 /src/public/*.conf.php
 /logs/*.*
-/src/public/*/*.*
-!/src/public/example/**/*
+/src/public/**/*.*
+!/src/public/example/**/*.*
 /.vscode
 /.idea/
 
