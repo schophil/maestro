@@ -38,7 +38,7 @@ $dao->addField('title', 6, new Mro_StringType(200));
 $dao->addField('abstract', 7, new Mro_XhtmlType());
 $dao->addField('content', 8, new Mro_XhtmlType());
 // events
-$dao = $daoConfig->addDao('event')->setClassName('Maestro\wcm\Mro_Event');
+$dao = $daoConfig->addDao('event')->setClassName('Maestro\agenda\Mro_Event');
 $dao->listWith('select id from event order by id desc');
 $dao->insertWith('insert into event values ({id},{uc},now(),null,null,null,null,null)');
 $dao->deleteWith('delete from event where id = {id} and uc = {uc}');

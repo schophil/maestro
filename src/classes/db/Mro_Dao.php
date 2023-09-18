@@ -96,10 +96,15 @@ class Mro_Dao
      * @param mixed $value The value of the field.
      * @return mixed The old value of the field.
      */
-    function setValue($fieldName, $value)
+    function setValue($fieldName, $value): mixed
     {
-        $oldValue = $this->data[$fieldName];
-        $this->data[$fieldName] = $value;
-        return $oldValue;
+        if (!isset($this->data[$fieldName])) {
+            $this->data[$fieldName] = $value;
+            return null;
+        } else {
+            $oldValue = $this->data[$fieldName];
+            $this->data[$fieldName] = $value;
+            return $oldValue;
+        }
     }
 }

@@ -45,7 +45,7 @@ class Mro_TextAreaField extends Mro_HtmlElement
             $value = trim($value);
             if ($value === '') {
                 $value = null;
-            } elseif (sizeof($value) == 0) {
+            } elseif (is_array($value) && sizeof($value) == 0) {
                 $value = null;
             }
         }

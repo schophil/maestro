@@ -34,6 +34,9 @@ class Mro_PageMap implements Mro_PageProvider
      */
     function get(string $pageId): ?Mro_Page
     {
+        if (!isset($this->pages[$pageId])) {
+            return null;
+        }
         return $this->pages[$pageId];
     }
 
