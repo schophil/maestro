@@ -27,7 +27,6 @@ class Mro_PreparedSql
     private $sql;            // the base SQL statement with tokens
     private $detectType;    // should the type automaticly be checked
     private $nodes;        // the tokens
-    private $isValid;        // indicates if the string was valid
     private $dateFormat;    // the format for the dates
 
     /**
@@ -48,7 +47,7 @@ class Mro_PreparedSql
      * @return string The prepared SQL statement.
      * @throws Mro_Exception If an error occurred.
      */
-    function prepare($values)
+    function prepare(array $values)
     {
         $result = null;
         if (!is_null($this->nodes)) {
@@ -75,7 +74,7 @@ class Mro_PreparedSql
 
                 // processing a token
                 if (array_key_exists($node->name, $values)) {
-                    $value = "{$values[$token->name]}";
+                    $value = "{$values[$node->name]}";
                     $result = substr_replace($result, $value, $node->begin, $node->length);
                 }
 
@@ -197,7 +196,7 @@ class Mro_PreparedSql
                     $nodes[] = $clause;
                     ++$i;
                     continue;
-                } elseif ($current == ']') {
+                } elseif (!is_null($clause) && $current == ']') {
                     // end a clause; parse its content for tokens
                     $clause->tokens = $this->parseTokens($clauseContent, false, true);
                     $clause->length = $i - $clause->begin + 1;
@@ -221,14 +220,14 @@ class Mro_PreparedSql
             } elseif (!is_null($token) && $current == '{') {
                 // case: error
                 throw new Mro_Exception("unexpected begin of token in [{$sql}]");
-            } elseif ($current == '}') {
+            } elseif (!is_null($token) && $current == '}') {
                 // case: end of token
                 $token->length = $i - $token->begin + 1;
-                if ($tokenName[0] == '?') {
+                if (!is_null($tokenName) && $tokenName[0] == '?') {
                     // a gardian
                     $token->isGuardian = true;
                     $token->name = substr($tokenName, 1);
-                } elseif ($tokenName[0] == '!') {
+                } elseif (!is_null($tokenName) && $tokenName[0] == '!') {
                     // ommit the typing
                     $token->ommitType = true;
                     $token->name = substr($tokenName, 1);
