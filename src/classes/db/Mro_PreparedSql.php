@@ -8,6 +8,7 @@
 namespace Maestro\db;
 
 use Maestro\Mro_Exception;
+use Maestro\util\Mro_DateTime;
 
 /**
  * Prepared SQL class helps creating SQL queries.
@@ -290,15 +291,10 @@ class Mro_PreparedSql
     // converts an object to a SQL value
     private function makeObjectSql(&$obj)
     {
-        $result = null;
-        $class = get_class($obj);
-        if ($class == 'Mro_DateTime') {
-            $result = "'";
-            $result .= $obj->format($this->dateFormat);
-            $result .= "'";
+        if ($obj instanceof Mro_DateTime) {
+            return "'" . $obj->format($this->dateFormat) . "'";
         } else {
-            $result = "{$obj}";
+            return "{$obj}";
         }
-        return $result;
     }
 }
